@@ -1,22 +1,31 @@
 $(document).ready(function () {
+    // plus button
+    let plusButtonState= false;
+   
     $('#plus_btn').on('click', function () {
-        $('.add-items').append(`  <div class="border border-2  p-2 mt-3">
-     <label for="">Product Name</label>
-     <input id="input_field4" class="input-style" type="text" placeholder="Product name..">
-     <label for="">Description</label>
-     <input id="input_field5" class="input-style" type="text" placeholder="">
-     <label for="">Quantity</label>
-     <input id="input_field6" class="input-style" type="number" placeholder="">
-     <label for="">Rate</label>
-     <input id="input_field7" class="input-style" type="number" placeholder="">
-     <label for="">Amount</label>
-     <input id="input_field8" class="input-style" type="text" placeholder="">
- </div>`);
+        if(plusButtonState===false){
+            $('.add-items').append(`  <div class="border border-2  p-2 mt-3">
+            <label for="">Product Name</label>
+            <input id="input_field4" class="input-style" type="text" placeholder="Product name..">
+            <label for="">Description</label>
+            <input id="input_field5" class="input-style" type="text" placeholder="">
+            <label for="">Quantity</label>
+            <input id="input_field6" class="input-style" type="number" placeholder="">
+            <label for="">Rate</label>
+            <input id="input_field7" class="input-style" type="number" placeholder="">
+            <label for="">Amount</label>
+            <input id="input_field8" class="input-style" type="text" placeholder="">
+        </div>`);
+        }
+        plusButtonState=true;
+        
     });
+    // close button
     $('#close_btn').on('click', function () {
         console.log('working')
         $('#remove_all').remove();
     });
+    // submit button
     $('#submit_btn').on('click', function () {
         var input1 = $('#input_field1').val();
         var input2 = $('#input_field2').val();
