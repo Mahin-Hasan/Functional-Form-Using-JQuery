@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     $('#plus_btn').on('click', function () {
         // if (plusButtonState === false) {
-            $('.add-items').append(`  
+        $('.add-items').append(`  
         <div class="border border-2  p-2 mt-3">
             <label for="">Product Name</label>
             <input id="input_field4" class="input-style" type="text" placeholder="Product name..">
@@ -31,8 +31,8 @@ $(document).ready(function () {
         // $('input-style').on('click',function(event){
         //     const details = event.target.value;
         //     console.log(details);
-        // })
-        
+        // }) rough code
+
         var input1 = $('#input_field1').val();
         var input2 = $('#input_field2').val();
         var input3 = $('#input_field3').val();
@@ -44,7 +44,7 @@ $(document).ready(function () {
         console.log(input1, input2, input3);
         $('#output_field').append(` 
         <div class="mt-3">
-            <h4 class="text-success">Results</h4>
+            <h4 class="text-succ ess">Results</h4>
             <p>Buyers Name: ${input1}</p>
             <p>Mobile: ${input2}</p>
             <p>Address: ${input3}</p>
@@ -54,6 +54,12 @@ $(document).ready(function () {
             <p>Rate: ${input7}</p>
             <p>Amount: ${input8}</p>
         </div>`);
-        $('input').val('');
+        $('input').val('');//clearing input field after submit button 
+        //For showing all input field items in console
+        $("input").each(function () {
+            var input = $(this).val();
+            console.log(input);
+        });
+
     });
 });
