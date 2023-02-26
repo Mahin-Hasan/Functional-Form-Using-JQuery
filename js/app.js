@@ -1,10 +1,11 @@
 $(document).ready(function () {
     // plus button
-    let plusButtonState= false;
-   
+    // let plusButtonState = false;
+
     $('#plus_btn').on('click', function () {
-        if(plusButtonState===false){
-            $('.add-items').append(`  <div class="border border-2  p-2 mt-3">
+        // if (plusButtonState === false) {
+            $('.add-items').append(`  
+        <div class="border border-2  p-2 mt-3">
             <label for="">Product Name</label>
             <input id="input_field4" class="input-style" type="text" placeholder="Product name..">
             <label for="">Description</label>
@@ -16,9 +17,9 @@ $(document).ready(function () {
             <label for="">Amount</label>
             <input id="input_field8" class="input-style" type="text" placeholder="">
         </div>`);
-        }
-        plusButtonState=true;
-        
+        // }
+        // plusButtonState = true;
+
     });
     // close button
     $('#close_btn').on('click', function () {
@@ -27,6 +28,11 @@ $(document).ready(function () {
     });
     // submit button
     $('#submit_btn').on('click', function () {
+        // $('input-style').on('click',function(event){
+        //     const details = event.target.value;
+        //     console.log(details);
+        // })
+        
         var input1 = $('#input_field1').val();
         var input2 = $('#input_field2').val();
         var input3 = $('#input_field3').val();
@@ -36,19 +42,18 @@ $(document).ready(function () {
         var input7 = $('#input_field7').val();
         var input8 = $('#input_field8').val();
         console.log(input1, input2, input3);
-        $('#output_field').append(` <div class="mt-3">
-    <h4 class="text-success">Results</h4>
-    <p>Buyers Name: ${input1}</p>
-    <p>Mobile: ${input2}</p>
-    <p>Address: ${input3}</p>
-    <p>Product Name: ${input4}</p>
-    <p>Description: ${input5}</p>
-    <p>Quantity: ${input6}</p>
-    <p>Rate: ${input7}</p>
-    <p>Amount: ${input8}</p>
-</div>`);
+        $('#output_field').append(` 
+        <div class="mt-3">
+            <h4 class="text-success">Results</h4>
+            <p>Buyers Name: ${input1}</p>
+            <p>Mobile: ${input2}</p>
+            <p>Address: ${input3}</p>
+            <p>Product Name: ${input4}</p>
+            <p>Description: ${input5}</p>
+            <p>Quantity: ${input6}</p>
+            <p>Rate: ${input7}</p>
+            <p>Amount: ${input8}</p>
+        </div>`);
         $('input').val('');
-
-
     });
 });
