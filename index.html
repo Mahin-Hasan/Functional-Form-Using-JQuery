@@ -23,16 +23,28 @@
 
     <div class="container container-style">
         <div class="mx-2">
-            <label for="">Buyer's Name</label>
-            <input id="input_field1" class="input-style" type="text" placeholder="Your name..">
-            <label for="">Mobile</label>
-            <input id="input_field2" class="input-style" type="number" placeholder="">
-            <label for="">Address</label>
-            <select id="input_field3" name="location" class="input-style">
-                <option value="Australia">Australia</option>
-                <option value="Bangladesh">Bangladesh</option>
-                <option value="Canada">Canada</option>
-            </select>
+            <div>
+                <label for="">Buyer's Name</label>
+                <input id="input_field1" class="input-style" type="text" placeholder="Your name..">
+                <button type="button" class="btn btn-danger position-absolute">Close</button>
+            </div>
+            <div>
+                <label for="">Mobile</label>
+                <input id="input_field2" class="input-style" type="number" placeholder="">
+                <button type="button" class="btn btn-danger position-absolute">Close</button>
+            </div>
+
+            <div>
+                <label for="">Address</label>
+                <select id="input_field3" name="location" class="input-style">
+                    <option value="Australia">Australia</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Canada">Canada</option>
+                </select>
+                <button  type="button" class="btn btn-danger position-absolute">Close</button>
+            </div>
+
+
             <!-- <input id="input_field3" class="input-style" type="text" placeholder=""> -->
             <input id="checkbox_status" type="checkbox" name="">
             <label class="checkbox-label" for="horns">Due</label>
@@ -48,7 +60,7 @@
             </div>
             <div class="mt-4">
                 <button id="plus_btn" type="button" class="btn border fw-bold">+</button>
-                <button id="close_btn" type="button" class="btn btn-danger">Close</button>
+                <button id="close_btn" type="button" class="btn btn-danger">Remove All</button>
                 <button id="submit_btn" type="button" class="btn btn-success">Submit</button>
             </div>
             <div id="output_field">
