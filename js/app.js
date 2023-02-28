@@ -64,10 +64,6 @@ $(document).ready(function () {
     });
     // submit button
     $('#submit_btn').on('click', function () {
-        // $('input-style').on('click',function(event){
-        //     const details = event.target.value;
-        //     console.log(details);
-        // }) rough code
         let input1 = $('#input_field1').val();
         let input2 = $('#input_field2').val();
         let input3 = $('#input_field3').val();
