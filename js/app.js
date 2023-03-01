@@ -1,5 +1,6 @@
 $(document).ready(function () {
     var itemCount = 0;
+
     $('#plus_btn').on('click', function () {
         itemCount++;
         var className = "item-" + itemCount;
@@ -31,15 +32,13 @@ $(document).ready(function () {
 
         // Removing the current input field when close button is clicked
         $('.btn-danger').on('click', function () {
-            let findCurrentBtn = $(this).parent().remove();
-            // console.log(findCurrentBtn);
+            $(this).parent().remove();
         })
 
     });
 
     // close button
     $('#close_btn').on('click', function () {
-        console.log('working')
         $('#remove_all').remove();
     });
     // submit button
@@ -47,24 +46,23 @@ $(document).ready(function () {
         let input1 = $('#input_field1').val();
         let input2 = $('#input_field2').val();
         let input3 = $('#input_field3').val();
+        let input4 = $('#checkbox_status').prop('checked');
         var items = $('.item');
-        // console.log({ items });
-        var insideObject=[];
-        // console.log(insideObject);
+        console.log({ items });
+        var insideObject = [];
+
         items.each(index => {
-            // console.log({ item: items[index] });
-            const initialItem = ({ item: items[index] });
-            const findInputName = initialItem.item.children[1]
-            const findInputDesc = initialItem.item.children[2]
-            const findInputQty = initialItem.item.children[3]
-            const findInputRate = initialItem.item.children[4]
-            const findInputAmount = initialItem.item.children[5]
-            const name= $(findInputName).find('.name').val();
-            const desc= $(findInputDesc).find('.desc').val();
-            const qty= $(findInputQty).find('.qty').val();
-            const rate= $(findInputRate).find('.rate').val();
-            const amount= $(findInputAmount).find('.amount').val();
-            // console.log(name,desc);
+            const initialItem =  $(items[index]);
+            const name = initialItem.find('.name').val();
+            const desc = initialItem.find('.desc').val();
+            let qty = initialItem.find('.qty').val();
+            let rate = initialItem.find('.rate').val();
+            let amount = initialItem.find('.amount').val();
+            // converting to number
+            qty = +qty;
+            rate = +rate;
+            amount = +amount;
+            console.log(typeof (qty));
             var itemObj = {
                 name: name,
                 desc: desc,
@@ -73,33 +71,33 @@ $(document).ready(function () {
                 amount: amount
             }
             insideObject.push(itemObj);
-
             console.log(itemObj);
-        })
+        });
 
         var result = {
             bName: input1,
             mobile: input2,
-            address : input3,
-            items:insideObject
-        }
-        console.log(result)
+            address: input3,
+            due: input4,
+            items: insideObject
+        };
+        console.log(result);
+        $('#output_field').html(`
+            <div class="border border-2  p-2 mt-2 ">
+            <pre>${JSON.stringify(result, null, 2)}</pre>
+            </div>
+        `);
+ 
         //For showing all input field items in console
         $("input").each(function () {
             var input = $(this).val();
-            // console.log(input);
         });
         //getting total input field items 
         const total = $('.input-style').length;
         console.log(total);
-        $('input').val('');//clearing input field after submit button 
-
+        // $('input').val('');//clearing input field after submit button
 
     });
-    // Removing the current input field when close button is clicked
-    $('.btn-danger').on('click', function () {
-        let findCurrentBtn = $(this).parent().remove();
-        console.log(findCurrentBtn);
-    })
+
 });
 

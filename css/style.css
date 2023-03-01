@@ -32,3 +32,9 @@ body{
 .checkbox-label{
     font-size: 14px;
 }
+.button-color{
+    background-color: #dc3545;
+}
+.button-color:hover{
+    background-color: #b32836 !important;
+}
